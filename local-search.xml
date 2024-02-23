@@ -8,7 +8,7 @@
     <link href="/2024/02/23/bevy%E6%95%99%E7%A8%8B/"/>
     <url>/2024/02/23/bevy%E6%95%99%E7%A8%8B/</url>
     
-    <content type="html"><![CDATA[<p>title: bevy 0.13<br>0.13版本上周发布，比0.12有更大的进步，尤其是在三维展现能力上，但是二维的变化也很大。<br>本文是第一篇，主要介绍如何开始一篇新的文章</p><p>首先要新建一个项目，这里前提是已经配置好Rust环境</p><p>code: cargo new testbevy</p>]]></content>
+    <content type="html"><![CDATA[<p>title: bevy 0.13<br>0.13版本上周发布，比0.12有更大的进步，尤其是在三维展现能力上，但是二维的变化也很大。<br>本文是第一篇，主要介绍如何开始一篇新的文章</p><p>首先要新建一个项目，这里前提是已经配置好Rust环境</p><p>‘’’ cargo new testbevy ‘’’</p>]]></content>
     
     
     
