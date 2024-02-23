@@ -16,21 +16,21 @@
   <meta name="author" content="D7Iot">
   <meta name="keywords" content="">
   
-    <meta name="description" content="计算机的本质就是将现实世界转换成数字，进行一定的运算然后再转换成人类能识别的文字、图形、音频、视频等以前是直接使用，真正的工作还是需要人来制作内容， 机器学习是将现实世界的数字化加以规范并根据事先训练有一定的数据提取能力。深度学习是提取方式改为以卷积和神经元细胞机制（即由激活函数过滤一次，有点像二级管）三极管即是放大。 方差和标准差都是用来衡量数据分散程度的统计量，但它们的计算方式和表示的含义有所">
+    <meta name="description" content="title: bevy 0.130.13版本上周发布，比0.12有更大的进步，尤其是在三维展现能力上，但是二维的变化也很大。本文是第一篇，主要介绍如何开始一篇新的文章 首先要新建一个项目，这里前提是已经配置好Rust环境 code: cargo new testbevy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习笔记0">
-<meta property="og:url" content="http://example.com/2024/02/17/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="bevy教程0.13（一）">
+<meta property="og:url" content="http://example.com/2024/02/23/bevy%E6%95%99%E7%A8%8B/index.html">
 <meta property="og:site_name" content="建筑数字化">
-<meta property="og:description" content="计算机的本质就是将现实世界转换成数字，进行一定的运算然后再转换成人类能识别的文字、图形、音频、视频等以前是直接使用，真正的工作还是需要人来制作内容， 机器学习是将现实世界的数字化加以规范并根据事先训练有一定的数据提取能力。深度学习是提取方式改为以卷积和神经元细胞机制（即由激活函数过滤一次，有点像二级管）三极管即是放大。 方差和标准差都是用来衡量数据分散程度的统计量，但它们的计算方式和表示的含义有所">
+<meta property="og:description" content="title: bevy 0.130.13版本上周发布，比0.12有更大的进步，尤其是在三维展现能力上，但是二维的变化也很大。本文是第一篇，主要介绍如何开始一篇新的文章 首先要新建一个项目，这里前提是已经配置好Rust环境 code: cargo new testbevy">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-02-17T11:41:13.000Z">
-<meta property="article:modified_time" content="2024-02-23T12:37:20.995Z">
+<meta property="article:published_time" content="2024-02-23T14:43:56.000Z">
+<meta property="article:modified_time" content="2024-02-23T14:47:22.401Z">
 <meta property="article:author" content="D7Iot">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>机器学习笔记0 - 建筑数字化</title>
+  <title>bevy教程0.13（一） - 建筑数字化</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +196,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="机器学习笔记0"></span>
+            <span id="subtitle" data-typed-text="bevy教程0.13（一）"></span>
           
         </div>
 
@@ -207,8 +207,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-02-17 19:41" pubdate>
-          2024年2月17日 晚上
+        <time datetime="2024-02-23 22:43" pubdate>
+          2024年2月23日 晚上
         </time>
       </span>
     
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          361 字
+          83 字
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          4 分钟
+          1 分钟
         
       </span>
     
@@ -267,17 +267,14 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">机器学习笔记0</h1>
+            <h1 id="seo-header">bevy教程0.13（一）</h1>
             
             
               <div class="markdown-body">
                 
-                <p>计算机的本质就是将现实世界转换成数字，进行一定的运算然后再转换成人类能识别的文字、图形、音频、视频等<br>以前是直接使用，真正的工作还是需要人来制作内容，</p>
-<p>机器学习是将现实世界的数字化加以规范并根据事先训练有一定的数据提取能力。<br>深度学习是提取方式改为以卷积和神经元细胞机制（即由激活函数过滤一次，有点像二级管）<br>三极管即是放大。</p>
-<p>方差和标准差都是用来衡量数据分散程度的统计量，但它们的计算方式和表示的含义有所不同。</p>
-<p>方差（Variance）是指数据集中每个数据与其平均数的差的平方的平均值。它的计算公式为：每个数据减去平均数，然后平方，最后求平均。</p>
-<p>标准差（Standard Deviation）是方差的平方根。它的计算公式为：先计算方差，然后取平方根。<br>标准差和平均值 的量级（没有多次方，是单次方）</p>
-<p>标准差是一种衡量数据分布的宽度或离散程度的指标。如果标准差较大，说明数据点相对于平均值的分散程度较大；如果标准差较小，说明数据点相对于平均值的分散程度较小。</p>
+                <p>title: bevy 0.13<br>0.13版本上周发布，比0.12有更大的进步，尤其是在三维展现能力上，但是二维的变化也很大。<br>本文是第一篇，主要介绍如何开始一篇新的文章</p>
+<p>首先要新建一个项目，这里前提是已经配置好Rust环境</p>
+<p>code: cargo new testbevy</p>
 
                 
               </div>
@@ -295,8 +292,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>机器学习笔记0</div>
-      <div>http://example.com/2024/02/17/机器学习笔记/</div>
+      <div>bevy教程0.13（一）</div>
+      <div>http://example.com/2024/02/23/bevy教程/</div>
     </div>
     <div class="license-meta">
       
@@ -308,7 +305,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年2月17日</div>
+          <div>2024年2月23日</div>
         </div>
       
       
@@ -340,18 +337,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/02/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B00/" title="机器学习笔记0">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">机器学习笔记0</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/02/17/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2024/02/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B00/" title="机器学习笔记0">
+                        <span class="hidden-mobile">机器学习笔记0</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
